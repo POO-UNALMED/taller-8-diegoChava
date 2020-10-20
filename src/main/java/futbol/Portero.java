@@ -41,13 +41,13 @@ public class Portero extends Futbolista {
 		return "El futbolista "+this.getNombre()+" tiene "+this.getEdad()+", y juega de "+this.getPosicion()+" con el dorsal "+this.dorsal+". Le han marcado "+this.golesRecibidos;
 		
 	}
-	public int compareTo(Portero p) {
+	public int compareTo(Object p) {
 		int diffGol = 0;
-		if (this.getGolesRecibidos()>=p.getGolesRecibidos()) {
-			diffGol = this.getGolesRecibidos()-p.getGolesRecibidos();
+		if (this.getGolesRecibidos()>=((Portero) p).getGolesRecibidos()) {
+			diffGol = this.getGolesRecibidos()-((Portero) p).getGolesRecibidos();
 		}
 		else {
-			diffGol = p.getGolesRecibidos()-this.getGolesRecibidos();
+			diffGol = ((Portero) p).getGolesRecibidos()-this.getGolesRecibidos();
 		}
 		return diffGol;
 	}

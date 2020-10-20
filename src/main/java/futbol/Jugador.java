@@ -12,9 +12,6 @@ public class Jugador extends Futbolista {
 		this.dorsal = 7;
 		
 	}
-
-
-
 	public Jugador(String nombre, int edad, String posicion, short golesMarcados, byte dorsal) {
 		super(nombre, edad, posicion);
 		this.golesMarcados = golesMarcados;
@@ -57,14 +54,7 @@ public class Jugador extends Futbolista {
 		
 	}
 	
-	public int compareTo(Jugador player) {
-		int age = 0;
-		if (this.getEdad()>=player.getEdad()) {
-			age = this.getEdad()-player.getEdad();
-		}
-		else {
-			age = player.getEdad()-this.getEdad();
-		}
-		return age;
+	public int compareTo(Object player) {
+		return getEdad() - ((Futbolista) player).getEdad();
 	}
 }
